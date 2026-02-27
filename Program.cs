@@ -30,7 +30,7 @@
 
                    
                    
-
+                    // login skal ende med og være true før programmet fortsætter
                 }
                 while (login == true)
                 {
