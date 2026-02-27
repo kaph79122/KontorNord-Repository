@@ -91,23 +91,23 @@
 
                     }
 
-                    static bool Logud(ref string LogudSvar)
+                    static void Logud(ref string LogudSvar, ref bool login)
                     {
                         Console.WriteLine("Ønsker du at logge ud? (JA / NEJ)");
                         LogudSvar = Console.ReadLine().ToLower();
 
                         if (LogudSvar == "ja")
                         {
-                            return false;
+                            login = false;
                         }
 
                         else if (LogudSvar == "nej")
                         {
-                            return true;
+                            login =  true;
                         }
                         else
                         {
-                            return false;
+                            login = false;
                         }
 
                     }
