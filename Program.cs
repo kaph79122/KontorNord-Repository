@@ -4,7 +4,24 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, neega");
+            bool ProgramKøre = true;
+            
+            
+            
+            while(ProgramKøre = true) 
+            {
+            
+                Console.WriteLine("===============================================");
+                Console.WriteLine("===================HOVEDMENU===================");
+                Console.WriteLine("===============================================");
+
+            
+
+
+
+
+
+
         }
     }
 }
