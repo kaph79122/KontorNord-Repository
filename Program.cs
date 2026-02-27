@@ -15,11 +15,11 @@
                 Console.WriteLine("===================HOVEDMENU===================");
                 Console.WriteLine("===============================================");
 
-                Console.WriteLine("1");
-                Console.WriteLine("2");
-                Console.WriteLine("3");
-                Console.WriteLine("4");
-                Console.WriteLine("5");
+                Console.WriteLine("1 Status på lokaler");
+                Console.WriteLine("2 Lokale information");
+                Console.WriteLine("3 Book et lokale");
+                Console.WriteLine("4 Log ud");
+               
 
                 string brugerinput = Console.ReadLine().ToLower();
 
@@ -41,7 +41,18 @@
                    break;
                 }
 
+                static void LokaleStatus()
+                {
 
+                }
+                static void LokaleInfo()
+                {
+
+                }
+                static void LokaleBook()
+                {
+
+                }
                 static bool Logud(ref string LogudSvar)
                 {
                     Console.WriteLine("Ønsker du at logge ud? (JA / NEJ)");
