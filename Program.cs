@@ -6,21 +6,30 @@
         {
             bool ProgramKøre = true;
             string LogudSvar = "";
+            bool login = false;
 
 
-
-            // SKRIV DIT LOGIN HER NEEGA :)
-            static void Login()
+            // SKRIV DIT LOGIN HER NEEGA 
+            static void Login(bool login)
             {
+                while (!login)
+                { 
+                    
+                    
+                }
 
 
 
 
 
 
+                login = true;
             }
 
-            while (ProgramKøre = true)
+
+           
+
+            while (ProgramKøre = true && login = true)
             {
                 Console.Clear();
                 Console.WriteLine("===============================================".PadLeft(50));
@@ -60,19 +69,19 @@
                    
                 }
 
-                // SKRIV DIT STATUS KODE HER MARIE :)
+                // SKRIV DIT STATUS KODE HER MARIE 
                 static void LokaleStatus()
                 {
 
                 }
 
-                // SKRIV DIT LOKALE INFO HER KATRINE :)
+                // SKRIV DIT LOKALE INFO HER KATRINE 
                 static void LokaleInfo()
                 {
 
                 }
 
-                // SKRIV DIT LOKALE book her RAFAEL :)
+                // SKRIV DIT LOKALE book her RAFAEL 
                 static void LokaleBook()
                 {
 
