@@ -37,7 +37,6 @@ namespace KontorNord
                 // køre så længe der er blevet logged ind
                 while (login == true)
                 {
-
                     HOVEDMENU(ref login, ref Brugerinput, ref LogudSvar, ref ProgramStart);
                     Brugerinput = Console.ReadLine().ToLower();
 
