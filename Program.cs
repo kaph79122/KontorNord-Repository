@@ -13,13 +13,14 @@
                 Console.WriteLine("===============================================".PadLeft(50));
                 Console.WriteLine("                BOOK ET MØDELOKALE             ".PadLeft(50));
                 Console.WriteLine("===============================================".PadLeft(50));
-                
                 Console.WriteLine("");
                 Console.WriteLine("    tryk på en vilkårlist tast for at forsætte...");
                 Console.ReadKey();
 
 
                 Console.Clear();
+
+
                 Login(ref login);
 
                 // SKRIV DIT LOGIN HER NEEGA 
