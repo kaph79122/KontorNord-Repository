@@ -66,7 +66,7 @@
                             break;
 
                         case "4":
-                            Logud(ref LogudSvar);
+                            Logud(ref LogudSvar, ref login);
                             Console.Clear();
                             break;
 
