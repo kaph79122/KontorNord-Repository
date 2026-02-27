@@ -39,14 +39,41 @@
                     
                    case "5":
                    break;
+                }
 
 
+                static string Logud()
+                {
+                    Console.WriteLine("Ønsker du at logge ud? (JA / NEJ)");
+                    string LogudSvar = Console.ReadLine().ToLower();
+
+                    if (LogudSvar == "ja")
+                    {
 
 
+                    }
 
+                    else if (LogudSvar == "nej")
+                    {
 
+                    }
+                    else
+                    {
+
+                    }
 
                 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
