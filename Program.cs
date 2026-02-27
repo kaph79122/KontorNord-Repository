@@ -5,7 +5,7 @@
         static void Main(string[] args)
         {
             bool ProgramKøre = true;
-
+            string LogudSvar = "";
 
 
             while (ProgramKøre = true)
@@ -42,24 +42,24 @@
                 }
 
 
-                static string Logud()
+                static bool Logud(ref string LogudSvar)
                 {
                     Console.WriteLine("Ønsker du at logge ud? (JA / NEJ)");
-                    string LogudSvar = Console.ReadLine().ToLower();
+                    LogudSvar = Console.ReadLine().ToLower();
 
                     if (LogudSvar == "ja")
                     {
-
+                        return false;
 
                     }
 
                     else if (LogudSvar == "nej")
                     {
-
+                        return true;
                     }
                     else
                     {
-
+                        return false;
                     }
 
                 }
