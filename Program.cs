@@ -20,7 +20,7 @@ namespace KontorNord
 
 
 
-
+            // køre så længe programmet er tændt
             while (ProgramKøre == true)
             {
                 Console.WriteLine("===============================================".PadLeft(50));
@@ -29,71 +29,29 @@ namespace KontorNord
                 Console.WriteLine("");
                 Console.WriteLine("    tryk på en vilkårlist tast for at forsætte...");
                 Console.ReadKey();
-
-
                 Console.Clear();
 
-
                 Login(ref login, ref Brugerinput, ref Brugernavn, ref Password, ref BrugerRegistret);
+            }
 
-                // SKRIV DIT LOGIN HER NEEGA 
-                static void Login(ref bool login, ref string Brugerinput, ref string Brugernavn, ref string Password, ref bool BrugerRegistret)
-                {
-                    Console.Clear();
-                    Console.WriteLine("===============================================".PadLeft(50));
-                    Console.WriteLine("                     LOGIN                     ".PadLeft(50));
-                    Console.WriteLine("===============================================".PadLeft(50));
+            // køre så længe der er blevet logged ind
+            while (login == true)
+            {
+                 Console.Clear();
+                 Console.WriteLine("===============================================".PadLeft(50));
+                 Console.WriteLine("                   HOVEDMENU                   ".PadLeft(50));
+                 Console.WriteLine("===============================================".PadLeft(50));
 
-                    Console.WriteLine("1)  Fortsæt til login".PadLeft(37));
-                    Console.WriteLine("2)  Opret bruger".PadLeft(38));
-                    Console.WriteLine("3)  Tilbage til start".PadLeft(34));
-                    Console.WriteLine("");
-
-                    Brugerinput = Console.ReadLine().ToLower();
-
-                    switch (Brugerinput)
-                    {
-                        case "1":
-                            Console.Clear();
-
-                            break;
-
-                        case "2":
-                            Console.Clear();
-                            Register(ref Brugernavn, ref Password, ref BrugerRegistret);
-                            break;
-
-                        case "3":
-                            Console.Clear();
-
-                            break;
-
-                        case "4":
-
-                            Console.Clear();
-                            break;
-                          // login skal ende med og være true før programmet fortsætter
-                    }
-                }
-
-
-                while (login == true)
-                {
-                    Console.Clear();
-                    Console.WriteLine("===============================================".PadLeft(50));
-                    Console.WriteLine("                   HOVEDMENU                   ".PadLeft(50));
-                    Console.WriteLine("===============================================".PadLeft(50));
-
-                    Console.WriteLine("1)  Status på lokaler".PadLeft(37));
-                    Console.WriteLine("2)  Lokale information".PadLeft(38));
-                    Console.WriteLine("3)  Book et lokale".PadLeft(34));
-                    Console.WriteLine("4)  Log ud".PadLeft(26));
+                 Console.WriteLine("1)  Status på lokaler".PadLeft(37));
+                 Console.WriteLine("2)  Lokale information".PadLeft(38));
+                 Console.WriteLine("3)  Book et lokale".PadLeft(34));
+                 Console.WriteLine("4)  Log ud".PadLeft(26));
 
 
                     Brugerinput = Console.ReadLine().ToLower();
 
-                    switch (Brugerinput)
-                    {
+                switch (Brugerinput)
+                {
                         case "1":
                             Console.Clear();
                             LokaleStatus();
@@ -113,65 +71,104 @@ namespace KontorNord
                             Logud(ref LogudSvar, ref login);
                             Console.Clear();
                             break;
-
-
-                    }
+                }
 
                     // SKRIV DIT STATUS KODE HER MARIE 
-                    static void LokaleStatus()
-                    {
-
-                    }
-
-                    // SKRIV DIT LOKALE INFO HER KATRINE 
-                    static void LokaleInfo()
-                    {
-
-                    }
-
-                    // SKRIV DIT LOKALE book her RAFAEL 
-                    static void LokaleBook()
-                    {
-
-                    }
-
-                    static void Logud(ref string LogudSvar, ref bool login)
-                    {
-                        Console.WriteLine("Ønsker du at logge ud? (JA / NEJ)");
-                        LogudSvar = Console.ReadLine().ToLower();
-
-                        if (LogudSvar == "ja")
-                        {
-                            login = false;
-                        }
-
-                        else if (LogudSvar == "nej")
-                        {
-                            login =  true;
-                        }
-                        else
-                        {
-                            login = false;
-                        }
-                    }
-                }
-
-                // jeg prøver lige og lave et register bruger for sjov
-                static void Register(ref string Brugernavn, ref string Password, ref bool BrugerRegistret)
+                static void LokaleStatus()
                 {
 
-                    Console.WriteLine("Indtast Dit brugernavn");
-                    Brugernavn = Console.ReadLine().ToLower();
+                }
 
-                    Console.WriteLine("Indtast Dit adgangkode");
-                    Password = Console.ReadLine().ToLower();
-
-                    BrugerRegistret = true;
+                 // SKRIV DIT LOKALE INFO HER KATRINE 
+                static void LokaleInfo()
+                {
 
                 }
 
+                // SKRIV DIT LOKALE book her RAFAEL 
+                static void LokaleBook()
+                {
+
+                }
+
+                static void Logud(ref string LogudSvar, ref bool login)
+                {
+                  Console.WriteLine("Ønsker du at logge ud? (JA / NEJ)");
+                  LogudSvar = Console.ReadLine().ToLower();
+
+                  if (LogudSvar == "ja")
+                  {
+                     login = false;
+                  }
+                  else if (LogudSvar == "nej")
+                  {
+                    login =  true;
+                  }
+                  else
+                  {
+                    login = false;
+                  }
+              }
+            }
+
+                // jeg prøver lige og lave et register bruger for sjov
+          static void Register(ref string Brugernavn, ref string Password, ref bool BrugerRegistret)
+          {
+
+              Console.WriteLine("Indtast Dit brugernavn");
+              Brugernavn = Console.ReadLine().ToLower();
+
+              Console.WriteLine("Indtast Dit adgangkode");
+              Password = Console.ReadLine().ToLower();
+
+              BrugerRegistret = true;
+
+          }
 
 
+            
+
+            // SKRIV DIT LOGIN HER NEEGA 
+            static void Login(ref bool login, ref string Brugerinput, ref string Brugernavn, ref string Password, ref bool BrugerRegistret)
+            {
+                Console.Clear();
+                Console.WriteLine("===============================================".PadLeft(50));
+                Console.WriteLine("                     LOGIN                     ".PadLeft(50));
+                Console.WriteLine("===============================================".PadLeft(50));
+
+                Console.WriteLine("1)  Fortsæt til login".PadLeft(37));
+                Console.WriteLine("2)  Opret bruger".PadLeft(38));
+                Console.WriteLine("3)  Tilbage til start".PadLeft(34));
+                Console.WriteLine("");
+
+                Brugerinput = Console.ReadLine().ToLower();
+
+                switch (Brugerinput)
+                {
+                    case "1":
+                        Console.Clear();
+
+
+
+
+                        break;
+
+                    case "2":
+                        Console.Clear();
+                        Register(ref Brugernavn, ref Password, ref BrugerRegistret);
+                        break;
+
+                    case "3":
+                        Console.Clear();
+
+                        break;
+
+                    case "4":
+
+                        Console.Clear();
+                        break;
+                        // login skal ende med og være true før programmet fortsætter
+                }
 
 
 
