@@ -10,15 +10,15 @@
 
             while (ProgramKøre = true)
             {
+                Console.Clear();
+                Console.WriteLine("===============================================".PadLeft(50));
+                Console.WriteLine("                   HOVEDMENU                   ".PadLeft(50));
+                Console.WriteLine("===============================================".PadLeft(50));
 
-                Console.WriteLine("===============================================");
-                Console.WriteLine("===================HOVEDMENU===================");
-                Console.WriteLine("===============================================");
-
-                Console.WriteLine("1 Status på lokaler");
-                Console.WriteLine("2 Lokale information");
-                Console.WriteLine("3 Book et lokale");
-                Console.WriteLine("4 Log ud");
+                Console.WriteLine("1)  Status på lokaler".PadLeft(37));
+                Console.WriteLine("2)  Lokale information".PadLeft(38));
+                Console.WriteLine("3)  Book et lokale".PadLeft(34));
+                Console.WriteLine("4)  Log ud".PadLeft(26));
                
 
                 string brugerinput = Console.ReadLine().ToLower();
@@ -26,19 +26,22 @@
                 switch(brugerinput)
                 {
                    case "1":
+                        LokaleStatus();
                    break;
                    
                    case "2":
+                        LokaleInfo();
                    break;
 
                    case "3":
+                        LokaleBook();
                    break;
                     
                    case "4":
+                        Logud(ref LogudSvar);
                    break;
                     
-                   case "5":
-                   break;
+                   
                 }
 
                 static void LokaleStatus()
