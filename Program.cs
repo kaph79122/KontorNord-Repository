@@ -12,7 +12,7 @@
             }
             else if (svar =="ja")
             {
-                Console.WriteLine("Oof”");
+                Console.WriteLine("Oof");
             }
         
         
