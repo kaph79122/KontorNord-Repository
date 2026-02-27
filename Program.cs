@@ -38,19 +38,23 @@
                 switch(brugerinput)
                 {
                    case "1":
-                        LokaleStatus();
+                        Console.Clear();
+                        LokaleStatus();     
                    break;
                    
                    case "2":
-                        LokaleInfo();
+                        Console.Clear();
+                        LokaleInfo();        
                    break;
 
                    case "3":
-                        LokaleBook();
+                        Console.Clear();
+                        LokaleBook();              
                    break;
                     
                    case "4":
                         Logud(ref LogudSvar);
+                        Console.Clear();
                    break;
                     
                    
