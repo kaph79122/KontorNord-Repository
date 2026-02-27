@@ -1,12 +1,25 @@
-﻿namespace KontorNord
+﻿using Microsoft.Win32;
+using System;
+
+namespace KontorNord
 {
     internal class Program
     {
         static void Main(string[] args)
         {
             bool ProgramKøre = true;
+            string Brugerinput = "";
             string LogudSvar = "";
-            bool login = false;
+            bool login = true; //midlertigit sat til true
+
+            //register
+            string Brugernavn = "";
+            string Password = "";
+            bool BrugerRegistret = false;
+          
+
+
+
 
             while (ProgramKøre == true)
             {
@@ -21,18 +34,49 @@
                 Console.Clear();
 
 
-                Login(ref login);
+                Login(ref login, ref Brugerinput, ref Brugernavn, ref Password, ref BrugerRegistret);
 
                 // SKRIV DIT LOGIN HER NEEGA 
-                static void Login(ref bool login)
+                static void Login(ref bool login, ref string Brugerinput, ref string Brugernavn, ref string Password, ref bool BrugerRegistret)
                 {
+                    Console.Clear();
+                    Console.WriteLine("===============================================".PadLeft(50));
+                    Console.WriteLine("                     LOGIN                     ".PadLeft(50));
+                    Console.WriteLine("===============================================".PadLeft(50));
 
+                    Console.WriteLine("1)  Fortsæt til login".PadLeft(37));
+                    Console.WriteLine("2)  Opret bruger".PadLeft(38));
+                    Console.WriteLine("3)  Tilbage til start".PadLeft(34));
+                    Console.WriteLine("");
 
+                    Brugerinput = Console.ReadLine().ToLower();
 
-                   
-                   
-                    // login skal ende med og være true før programmet fortsætter
+                    switch (Brugerinput)
+                    {
+                        case "1":
+                            Console.Clear();
+
+                            break;
+
+                        case "2":
+                            Console.Clear();
+                            Register(ref Brugernavn, ref Password, ref BrugerRegistret);
+                            break;
+
+                        case "3":
+                            Console.Clear();
+
+                            break;
+
+                        case "4":
+
+                            Console.Clear();
+                            break;
+                          // login skal ende med og være true før programmet fortsætter
+                    }
                 }
+
+
                 while (login == true)
                 {
                     Console.Clear();
@@ -46,9 +90,9 @@
                     Console.WriteLine("4)  Log ud".PadLeft(26));
 
 
-                    string brugerinput = Console.ReadLine().ToLower();
+                    Brugerinput = Console.ReadLine().ToLower();
 
-                    switch (brugerinput)
+                    switch (Brugerinput)
                     {
                         case "1":
                             Console.Clear();
@@ -109,48 +153,26 @@
                         {
                             login = false;
                         }
-
                     }
+                }
 
+                // jeg prøver lige og lave et register bruger for sjov
+                static void Register(ref string Brugernavn, ref string Password, ref bool BrugerRegistret)
+                {
 
+                    Console.WriteLine("Indtast Dit brugernavn");
+                    Brugernavn = Console.ReadLine().ToLower();
 
-                    
+                    Console.WriteLine("Indtast Dit adgangkode");
+                    Password = Console.ReadLine().ToLower();
 
-
-
-                     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                    BrugerRegistret = true;
 
                 }
-           
 
 
-           
 
-          
+
 
 
 
