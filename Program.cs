@@ -8,6 +8,18 @@
             string LogudSvar = "";
 
 
+
+            // SKRIV DIT LOGIN HER NEEGA :)
+            static void Login()
+            {
+
+
+
+
+
+
+            }
+
             while (ProgramKøre = true)
             {
                 Console.Clear();
@@ -44,18 +56,24 @@
                    
                 }
 
+                // SKRIV DIT STATUS KODE HER MARIE :)
                 static void LokaleStatus()
                 {
 
                 }
+
+                // SKRIV DIT LOKALE INFO HER KATRINE :)
                 static void LokaleInfo()
                 {
 
                 }
+
+                // SKRIV DIT LOKALE book her RAFAEL :)
                 static void LokaleBook()
                 {
 
                 }
+
                 static bool Logud(ref string LogudSvar)
                 {
                     Console.WriteLine("Ønsker du at logge ud? (JA / NEJ)");
