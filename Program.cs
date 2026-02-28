@@ -12,14 +12,13 @@ namespace KontorNord
             string Brugerinput = "";
             string LogudSvar = "";
             bool login = false; 
-      
             string Brugernavn = "";
             string Password = "";
             bool BrugerRegistret = false;
 
 
 
-            /// VORES PROGRAM
+            /// selve programmet
 
             while (ProgramStart == true)
             {
@@ -30,7 +29,6 @@ namespace KontorNord
                 LOGINTEKST();
                 LoginMENU(ref login, ref Brugerinput, ref Brugernavn, ref Password, ref BrugerRegistret);
                
-                
                 if (login == true)
                 {
                     HOVEDMENUTEKST();
@@ -65,9 +63,8 @@ namespace KontorNord
 
         static void LoginMENU(ref bool login, ref string Brugerinput, ref string Brugernavn, ref string Password, ref bool BrugerRegistret)
         {
-           
+            
             Brugerinput = Console.ReadLine().ToLower();
-
 
             switch (Brugerinput)
             {
@@ -90,9 +87,10 @@ namespace KontorNord
         }
 
 
-        // SKRIV DIT LOGIN HER NEEGA
+        // Skriv dit login her, Neega
         static bool Login()
         {
+
 
             return true; // login skal ende med og være true før programmet fortsætter
         }
@@ -155,27 +153,29 @@ namespace KontorNord
 
            
 
-     // SKRIV DIT LOKALE INFO HER MARIE
+     // Skriv dit lokale status her, marie
             
         static void LokaleStatus()    
         {
             
+
         }
 
 
-     // SKRIV DIT LOKALE INFO HER KATRINE 
+     // Skriv dit lokale info her, Katrine
            
         static void LokaleInfo()    
         {
             
+
         }
 
 
 
-     // SKRIV DIT LOKALE book her RAFAEL 
-            
+     // Skriv dit lokale booking her, Rafael
         static void LokaleBook()    
         {
+
 
         }
 
