@@ -7,7 +7,7 @@ namespace KontorNord
     {
         static void Main(string[] args)
         {
-            //Datatyper
+            // Datatyper
             bool ProgramStart = true;
             string Brugerinput = "";
             string LogudSvar = "";
@@ -18,7 +18,7 @@ namespace KontorNord
 
 
 
-            /// selve programmet
+            /// Selve programmet
 
             while (ProgramStart == true)
             {
