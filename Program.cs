@@ -183,20 +183,24 @@ namespace KontorNord
            
         static void Logud(ref string LogudSvar, ref bool login)
         {   
-            Console.WriteLine("Ønsker du at logge ud? (JA / NEJ)"); 
+            Console.WriteLine("Ønsker du at logge ud? ");
+            Console.WriteLine(" 1) Ja ");
+            Console.WriteLine(" 2) Nej ");
             LogudSvar = Console.ReadLine().ToLower();
-       
-            if (LogudSvar == "ja")
+
+            switch (LogudSvar)
             {
-                login = false;   
-            }   
-            else if (LogudSvar == "nej")
-            {
-                login = true;   
-            }
-            else
-            {
-                login = false;   
+                case "1":
+                    Console.Clear();
+                    login = false;
+                    break;
+
+                case "2":
+                    Console.Clear();
+                    login = true;
+                    break;
+
+                
             }
         }    
     }
