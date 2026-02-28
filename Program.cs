@@ -126,10 +126,6 @@ namespace KontorNord
 
         static void Hovedmenu(ref bool login, ref string Brugerinput, ref string LogudSvar)
         {
-
-            while (login == true)
-
-
                 Brugerinput = Console.ReadLine().ToLower();
 
             switch (Brugerinput)
@@ -159,60 +155,49 @@ namespace KontorNord
 
            
 
-            // SKRIV DIT LOKALE INFO HER MARIE
-            static void LokaleStatus()
-            {
-
-            }
-
-
-            // SKRIV DIT LOKALE INFO HER KATRINE 
-            static void LokaleInfo()
-            {
-
-            }
-
-
-
-            // SKRIV DIT LOKALE book her RAFAEL 
-            static void LokaleBook()
-            {
-
-            }
-
-
-            static void Logud(ref string LogudSvar, ref bool login)
-            {
-                Console.WriteLine("Ønsker du at logge ud? (JA / NEJ)");
-                LogudSvar = Console.ReadLine().ToLower();
-
-                if (LogudSvar == "ja")
-                {
-                    login = false;
-                }
-                else if (LogudSvar == "nej")
-                {
-                    login = true;
-                }
-                else
-                {
-                    login = false;
-                }
-            }
-
+     // SKRIV DIT LOKALE INFO HER MARIE
             
+        static void LokaleStatus()    
+        {
             
+        }
 
-         
-                
+
+     // SKRIV DIT LOKALE INFO HER KATRINE 
            
-
+        static void LokaleInfo()    
+        {
             
+        }
+
+
+
+     // SKRIV DIT LOKALE book her RAFAEL 
+            
+        static void LokaleBook()    
+        {
+
+        }
+
 
            
-
-
-
-        
+        static void Logud(ref string LogudSvar, ref bool login)
+        {   
+            Console.WriteLine("Ønsker du at logge ud? (JA / NEJ)"); 
+            LogudSvar = Console.ReadLine().ToLower();
+       
+            if (LogudSvar == "ja")
+            {
+                login = false;   
+            }   
+            else if (LogudSvar == "nej")
+            {
+                login = true;   
+            }
+            else
+            {
+                login = false;   
+            }
+        }    
     }
 }
