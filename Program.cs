@@ -157,13 +157,60 @@ namespace KontorNord
             
         static void LokaleStatus()    
         {
-            
 
-        }
+            string[] tider = { "Morgen", "Formiddag", "Eftermiddag" };
+
+            Console.WriteLine("========================================================".PadLeft(50));
+            Console.WriteLine("     Lokale A     |     Lokale B     |     Lokale C     |".PadLeft(50));
+            Console.WriteLine("========================================================".PadLeft(50));
+
+            for (int i = 0; i < 3; i++)
+            {
+                
+                Console.Write(tider[i].PadRight(18));
+
+                string statusA;
+                if (lokaleA[i])
+                {
+                    statusA = "reserveret";
+                }
+                else
+                {
+                    statusA = "ledig";
+                }
+
+                string statusB;
+                if (lokaleB[i])
+                {
+                    statusB = "reserveret";
+                }
+                else
+                {
+                    statusB = "ledig";
+                }
+
+                string statusC;
+                if (lokaleC[i])
+                {
+                    statusC = "reserveret";
+                }
+                else
+                {
+                    statusC = "ledig";
+                }
+
+                Console.WriteLine("   " + statusA.PadRight(20) + "   " + statusB.PadRight(20) + "   " + statusC);
 
 
-     // Skriv dit lokale info her, Katrine
-           
+                Console.WriteLine("Tryk på en tast for at gå tilbage...");
+                Console.ReadKey();
+
+
+            }
+
+
+        // Skriv dit lokale info her, Katrine
+
         static void LokaleInfo()    
         {
             
@@ -175,6 +222,7 @@ namespace KontorNord
      // Skriv dit lokale booking her, Rafael
         static void LokaleBook()    
         {
+
 
 
         }
