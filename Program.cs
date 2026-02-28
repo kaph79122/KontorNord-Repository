@@ -29,7 +29,7 @@ namespace KontorNord
                 LOGINTEKST();
                 LoginMENU(ref login, ref Brugerinput, ref Brugernavn, ref Password, ref BrugerRegistret);
                
-                if (login == true)
+                while (login == true)
                 {
                     HOVEDMENUTEKST();
                     Hovedmenu(ref login, ref Brugerinput, ref LogudSvar);
@@ -70,7 +70,7 @@ namespace KontorNord
             {
                 case "1":
                     Console.Clear();
-                    Login();
+                    Login(ref login);
                     break;
 
                 case "2":
@@ -88,11 +88,11 @@ namespace KontorNord
 
 
         // Skriv dit login her, Neega
-        static bool Login()
+        static void Login(ref bool login)
         {
 
 
-            return true; // login skal ende med og være true før programmet fortsætter
+            login = true; // login skal ende med og være true før programmet fortsætter
         }
 
 
