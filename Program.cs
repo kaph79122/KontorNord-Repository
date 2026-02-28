@@ -7,12 +7,12 @@ namespace KontorNord
     {
         static void Main(string[] args)
         {
+            //Datatyper
             bool ProgramStart = true;
             string Brugerinput = "";
             string LogudSvar = "";
             bool login = false; 
-
-            //register
+      
             string Brugernavn = "";
             string Password = "";
             bool BrugerRegistret = false;
@@ -29,11 +29,18 @@ namespace KontorNord
 
                 LOGINTEKST();
                 LoginMENU(ref login, ref Brugerinput, ref Brugernavn, ref Password, ref BrugerRegistret);
-
-                HOVEDMENUTEKST();
-                Hovedmenu(ref login, ref Brugerinput, ref LogudSvar);
+               
+                
+                if (login == true)
+                {
+                    HOVEDMENUTEKST();
+                    Hovedmenu(ref login, ref Brugerinput, ref LogudSvar);
+                }
+                
             }   
         }
+
+        // Alle metoder til programmet
         static void INTROTEKST()
         {
             Console.WriteLine("===============================================".PadLeft(50));
@@ -181,9 +188,7 @@ namespace KontorNord
 
                 if (LogudSvar == "ja")
                 {
-                    
                     login = false;
-
                 }
                 else if (LogudSvar == "nej")
                 {
@@ -193,10 +198,9 @@ namespace KontorNord
                 {
                     login = false;
                 }
-
             }
 
-             // jeg prøver lige og lave et register bruger for sjov
+            
             
 
          
