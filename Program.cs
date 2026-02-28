@@ -27,8 +27,8 @@ namespace KontorNord
                 Console.ReadKey();
                 Console.Clear();
 
-
-                Login(ref login, ref Brugerinput, ref Brugernavn, ref Password, ref BrugerRegistret, ref ProgramStart);
+                LOGINTEKST();
+                Login(ref login, ref Brugerinput, ref Brugernavn, ref Password, ref BrugerRegistret);
 
 
                 
@@ -62,11 +62,30 @@ namespace KontorNord
                 } 
             }
 
-         //METODER 
+            //METODER 
 
+            static void INTROTEKST()
+            {
+                Console.WriteLine("===============================================".PadLeft(50));
+                Console.WriteLine("                BOOK ET MØDELOKALE             ".PadLeft(50));
+                Console.WriteLine("===============================================".PadLeft(50));
+                Console.WriteLine("");
+                Console.WriteLine("    tryk på en vilkårlist tast for at forsætte...");
+            }
+            static void LOGINTEKST()
+            {
+                Console.Clear();
+                Console.WriteLine("===============================================".PadLeft(50));
+                Console.WriteLine("                     LOGIN                     ".PadLeft(50));
+                Console.WriteLine("===============================================".PadLeft(50));
+                Console.WriteLine("1)  Fortsæt til login".PadLeft(37));
+                Console.WriteLine("2)  Opret bruger".PadLeft(38));
+                Console.WriteLine("3)  Tilbage til start".PadLeft(34));
+                Console.WriteLine("");
+            }
 
             // SKRIV DIT LOGIN HER NEEGA             
-            static void Login(ref bool login, ref string Brugerinput, ref string Brugernavn, ref string Password, ref bool BrugerRegistret, ref bool ProgramStart)
+            static void Login(ref bool login, ref string Brugerinput, ref string Brugernavn, ref string Password, ref bool BrugerRegistret)
             {
                 LOGINTEKST();
                 Brugerinput = Console.ReadLine().ToLower();
@@ -77,6 +96,9 @@ namespace KontorNord
                     case "1":
                         Console.Clear();
                         
+
+
+
 
                         break;
 
@@ -90,17 +112,26 @@ namespace KontorNord
 
                         break;
 
-                    case "4":
-                        Console.Clear();
-
-                        break;
+                    
 
 
                         // login skal ende med og være true før programmet fortsætter
                 }
             }
 
-            // SKRIV DIT LOKALE INFO HER Marie 
+            static void HOVEDMENUTEKST()
+            {
+                Console.Clear();
+                Console.WriteLine("===============================================".PadLeft(50));
+                Console.WriteLine("                   HOVEDMENU                   ".PadLeft(50));
+                Console.WriteLine("===============================================".PadLeft(50));
+                Console.WriteLine("1)  Status på lokaler".PadLeft(37));
+                Console.WriteLine("2)  Lokale information".PadLeft(38));
+                Console.WriteLine("3)  Book et lokale".PadLeft(34));
+                Console.WriteLine("4)  Log ud".PadLeft(26));
+            }
+
+            // SKRIV DIT LOKALE INFO HER MARIE
             static void LokaleStatus()
             {
 
@@ -123,14 +154,13 @@ namespace KontorNord
 
 
 
-            static void Logud(ref string LogudSvar, ref bool login, ref bool ProgramStart)
             {
                 Console.WriteLine("Ønsker du at logge ud? (JA / NEJ)");
                 LogudSvar = Console.ReadLine().ToLower();
 
                 if (LogudSvar == "ja")
                 {
-                    ProgramStart = true;
+                    
                     login = false;
 
                 }
@@ -158,40 +188,13 @@ namespace KontorNord
                 BrugerRegistret = true;   
             }
 
-         // TEKST METODER
+         
                 
-            static void HOVEDMENUTEKST()
-            {
-                Console.Clear();    
-                Console.WriteLine("===============================================".PadLeft(50));
-                Console.WriteLine("                   HOVEDMENU                   ".PadLeft(50));
-                Console.WriteLine("===============================================".PadLeft(50)); 
-                Console.WriteLine("1)  Status på lokaler"                          .PadLeft(37));
-                Console.WriteLine("2)  Lokale information"                         .PadLeft(38));     
-                Console.WriteLine("3)  Book et lokale"                             .PadLeft(34));
-                Console.WriteLine("4)  Log ud"                                     .PadLeft(26));                              
-            }
+           
 
-            static void INTROTEKST()
-            {
-                Console.WriteLine("===============================================".PadLeft(50));
-                Console.WriteLine("                BOOK ET MØDELOKALE             ".PadLeft(50));
-                Console.WriteLine("===============================================".PadLeft(50));
-                Console.WriteLine("");
-                Console.WriteLine("    tryk på en vilkårlist tast for at forsætte...");
-            }
+            
 
-            static void LOGINTEKST()
-            {
-                Console.Clear();
-                Console.WriteLine("===============================================".PadLeft(50));
-                Console.WriteLine("                     LOGIN                     ".PadLeft(50));
-                Console.WriteLine("===============================================".PadLeft(50));
-                Console.WriteLine("1)  Fortsæt til login".PadLeft(37));
-                Console.WriteLine("2)  Opret bruger".PadLeft(38));
-                Console.WriteLine("3)  Tilbage til start".PadLeft(34));
-                Console.WriteLine("");
-            }
+           
 
 
 
