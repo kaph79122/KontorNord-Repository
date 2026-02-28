@@ -22,16 +22,12 @@ namespace KontorNord
 
             while (ProgramStart == true)
             {
-                INTROTEKST();
-                Console.ReadKey();
-                Console.Clear();
-
-                LOGINTEKST();
-                LoginMENU(ref login, ref Brugerinput, ref Brugernavn, ref Password, ref BrugerRegistret);
+                INTRO();
+                
+                LOGINMENU(ref login, ref Brugerinput, ref Brugernavn, ref Password, ref BrugerRegistret);
                
                 while (login == true)
-                {
-                    HOVEDMENUTEKST();
+                {            
                     Hovedmenu(ref login, ref Brugerinput, ref LogudSvar);
                 }
                 
@@ -39,16 +35,18 @@ namespace KontorNord
         }
 
         // Alle metoder til programmet
-        static void INTROTEKST()
+        static void INTRO()
         {
             Console.WriteLine("===============================================".PadLeft(50));
             Console.WriteLine("                BOOK ET MØDELOKALE             ".PadLeft(50));
             Console.WriteLine("===============================================".PadLeft(50));
             Console.WriteLine("");
             Console.WriteLine("    tryk på en vilkårlist tast for at forsætte...");
+            Console.ReadKey();
+            Console.Clear();
         }
 
-        static void LOGINTEKST()
+        static void LOGINMENU(ref bool login, ref string Brugerinput, ref string Brugernavn, ref string Password, ref bool BrugerRegistret)
         {
             Console.Clear();
             Console.WriteLine("===============================================".PadLeft(50));
@@ -58,12 +56,7 @@ namespace KontorNord
             Console.WriteLine("2)  Opret bruger".PadLeft(38));
             Console.WriteLine("3)  Tilbage til start".PadLeft(34));
             Console.WriteLine("");
-        }
-
-
-        static void LoginMENU(ref bool login, ref string Brugerinput, ref string Brugernavn, ref string Password, ref bool BrugerRegistret)
-        {
-            
+           
             Brugerinput = Console.ReadLine().ToLower();
 
             switch (Brugerinput)
@@ -108,7 +101,10 @@ namespace KontorNord
         }
 
 
-        static void HOVEDMENUTEKST()
+
+
+
+        static void Hovedmenu(ref bool login, ref string Brugerinput, ref string LogudSvar)
         {
             Console.Clear();
             Console.WriteLine("===============================================".PadLeft(50));
@@ -118,13 +114,7 @@ namespace KontorNord
             Console.WriteLine("2)  Lokale information".PadLeft(38));
             Console.WriteLine("3)  Book et lokale".PadLeft(34));
             Console.WriteLine("4)  Log ud".PadLeft(26));
-        }
-
-
-
-        static void Hovedmenu(ref bool login, ref string Brugerinput, ref string LogudSvar)
-        {
-                Brugerinput = Console.ReadLine().ToLower();
+            Brugerinput = Console.ReadLine().ToLower();
 
             switch (Brugerinput)
             {
@@ -151,7 +141,6 @@ namespace KontorNord
         }
 
 
-           
 
      // Skriv dit lokale status her, marie
             
@@ -160,6 +149,7 @@ namespace KontorNord
             
 
         }
+
 
 
      // Skriv dit lokale info her, Katrine
