@@ -10,7 +10,7 @@ namespace KontorNord
             bool ProgramStart = true;
             string Brugerinput = "";
             string LogudSvar = "";
-            bool login = false; //midlertigit sat til true
+            bool login = false; 
 
             //register
             string Brugernavn = "";
@@ -28,7 +28,7 @@ namespace KontorNord
                 Console.Clear();
 
                 LOGINTEKST();
-                Login(ref login, ref Brugerinput, ref Brugernavn, ref Password, ref BrugerRegistret);
+                LoginMENU(ref login, ref Brugerinput, ref Brugernavn, ref Password, ref BrugerRegistret);
 
 
                 
@@ -56,7 +56,7 @@ namespace KontorNord
 
                         case "4":
                             Console.Clear();
-                            login = false;                 
+                            Logud(ref LogudSvar, ref login);             
                             break;
                     }
                 } 
@@ -84,8 +84,8 @@ namespace KontorNord
                 Console.WriteLine("");
             }
 
-            // SKRIV DIT LOGIN HER NEEGA             
-            static void Login(ref bool login, ref string Brugerinput, ref string Brugernavn, ref string Password, ref bool BrugerRegistret)
+                 
+            static void LoginMENU(ref bool login, ref string Brugerinput, ref string Brugernavn, ref string Password, ref bool BrugerRegistret)
             {
                 LOGINTEKST();
                 Brugerinput = Console.ReadLine().ToLower();
@@ -95,11 +95,7 @@ namespace KontorNord
                 {
                     case "1":
                         Console.Clear();
-                        
-
-
-
-
+                        Login();
                         break;
 
                     case "2":
@@ -111,11 +107,7 @@ namespace KontorNord
                         Console.Clear();
 
                         break;
-
-                    
-
-
-                        // login skal ende med og være true før programmet fortsætter
+                         // login skal ende med og være true før programmet fortsætter
                 }
             }
 
@@ -130,6 +122,23 @@ namespace KontorNord
                 Console.WriteLine("3)  Book et lokale".PadLeft(34));
                 Console.WriteLine("4)  Log ud".PadLeft(26));
             }
+
+
+            // SKRIV DIT LOGIN HER NEEGA
+            static bool Login()
+            {
+
+                return true; 
+            }
+
+
+
+
+
+
+
+
+
 
             // SKRIV DIT LOKALE INFO HER MARIE
             static void LokaleStatus()
@@ -153,7 +162,7 @@ namespace KontorNord
             }
 
 
-
+            static void Logud(ref string LogudSvar, ref bool login)
             {
                 Console.WriteLine("Ønsker du at logge ud? (JA / NEJ)");
                 LogudSvar = Console.ReadLine().ToLower();
