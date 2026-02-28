@@ -85,7 +85,7 @@ namespace KontorNord
                     Console.Clear();
 
                     break;
-                    // login skal ende med og være true før programmet fortsætter
+                    
             }
         }
 
@@ -94,7 +94,7 @@ namespace KontorNord
         static bool Login()
         {
 
-            return true;
+            return true; // login skal ende med og være true før programmet fortsætter
         }
 
 
