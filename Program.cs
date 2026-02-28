@@ -10,7 +10,7 @@ namespace KontorNord
             bool ProgramStart = true;
             string Brugerinput = "";
             string LogudSvar = "";
-            bool login = true; //midlertigit sat til true
+            bool login = false; //midlertigit sat til true
 
             //register
             string Brugernavn = "";
@@ -23,21 +23,18 @@ namespace KontorNord
 
             while (ProgramStart == true)
             {
-                Console.WriteLine("===============================================".PadLeft(50));
-                Console.WriteLine("                BOOK ET MØDELOKALE             ".PadLeft(50));
-                Console.WriteLine("===============================================".PadLeft(50));
-                Console.WriteLine("");
-                Console.WriteLine("    tryk på en vilkårlist tast for at forsætte...");
+                INTROTEKST();
                 Console.ReadKey();
                 Console.Clear();
+
 
                 Login(ref login, ref Brugerinput, ref Brugernavn, ref Password, ref BrugerRegistret, ref ProgramStart);
 
 
-                // køre så længe der er blevet logged ind
+                
                 while (login == true)
                 {
-                    HOVEDMENUTekst(ref login, ref Brugerinput, ref LogudSvar, ref ProgramStart);
+                    HOVEDMENUTEKST();
                     Brugerinput = Console.ReadLine().ToLower();
 
                     switch (Brugerinput)
@@ -58,34 +55,28 @@ namespace KontorNord
                             break;
 
                         case "4":
-                            Logud(ref LogudSvar, ref login, ref ProgramStart);
                             Console.Clear();
+                            login = false;                 
                             break;
                     }
                 } 
             }
 
+         //METODER 
+
 
             // SKRIV DIT LOGIN HER NEEGA             
             static void Login(ref bool login, ref string Brugerinput, ref string Brugernavn, ref string Password, ref bool BrugerRegistret, ref bool ProgramStart)
             {
-                Console.Clear();
-                Console.WriteLine("===============================================".PadLeft(50));
-                Console.WriteLine("                     LOGIN                     ".PadLeft(50));
-                Console.WriteLine("===============================================".PadLeft(50));
-
-                Console.WriteLine("1)  Fortsæt til login".PadLeft(37));
-                Console.WriteLine("2)  Opret bruger".PadLeft(38));
-                Console.WriteLine("3)  Tilbage til start".PadLeft(34));
-                Console.WriteLine("");
-
+                LOGINTEKST();
                 Brugerinput = Console.ReadLine().ToLower();
+
 
                 switch (Brugerinput)
                 {
                     case "1":
                         Console.Clear();
-                        login = true;
+                        
 
                         break;
 
@@ -167,27 +158,43 @@ namespace KontorNord
                 BrugerRegistret = true;   
             }
 
-            
+         // TEKST METODER
                 
-            static void HOVEDMENUTekst(ref bool login, ref string Brugerinput, ref string LogudSvar, ref bool ProgramStart)
+            static void HOVEDMENUTEKST()
             {
-                while (login == true)
-                {
-                    Console.Clear();
-                    Console.WriteLine("===============================================".PadLeft(50));
-                    Console.WriteLine("                   HOVEDMENU                   ".PadLeft(50));
-                    Console.WriteLine("===============================================".PadLeft(50));
-                    Console.WriteLine("1)  Status på lokaler".PadLeft(37));
-                    Console.WriteLine("2)  Lokale information".PadLeft(38));
-                    Console.WriteLine("3)  Book et lokale".PadLeft(34));
-                    Console.WriteLine("4)  Log ud".PadLeft(26));
-                    Brugerinput = Console.ReadLine().ToLower();
-                }
-
-
-
-
+                Console.Clear();    
+                Console.WriteLine("===============================================".PadLeft(50));
+                Console.WriteLine("                   HOVEDMENU                   ".PadLeft(50));
+                Console.WriteLine("===============================================".PadLeft(50)); 
+                Console.WriteLine("1)  Status på lokaler"                          .PadLeft(37));
+                Console.WriteLine("2)  Lokale information"                         .PadLeft(38));     
+                Console.WriteLine("3)  Book et lokale"                             .PadLeft(34));
+                Console.WriteLine("4)  Log ud"                                     .PadLeft(26));                              
             }
+
+            static void INTROTEKST()
+            {
+                Console.WriteLine("===============================================".PadLeft(50));
+                Console.WriteLine("                BOOK ET MØDELOKALE             ".PadLeft(50));
+                Console.WriteLine("===============================================".PadLeft(50));
+                Console.WriteLine("");
+                Console.WriteLine("    tryk på en vilkårlist tast for at forsætte...");
+            }
+
+            static void LOGINTEKST()
+            {
+                Console.Clear();
+                Console.WriteLine("===============================================".PadLeft(50));
+                Console.WriteLine("                     LOGIN                     ".PadLeft(50));
+                Console.WriteLine("===============================================".PadLeft(50));
+                Console.WriteLine("1)  Fortsæt til login".PadLeft(37));
+                Console.WriteLine("2)  Opret bruger".PadLeft(38));
+                Console.WriteLine("3)  Tilbage til start".PadLeft(34));
+                Console.WriteLine("");
+            }
+
+
+
         }
     }
 }
