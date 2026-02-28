@@ -198,9 +198,7 @@ namespace KontorNord
                 case "2":
                     Console.Clear();
                     login = true;
-                    break;
-
-                
+                    break;      
             }
         }    
     }
