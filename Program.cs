@@ -34,7 +34,7 @@ namespace KontorNord
                 {            
                     Hovedmenu(ref login, ref Brugerinput, ref LogudSvar);
                 }
-                
+             
             }   
         }
 
