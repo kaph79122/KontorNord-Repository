@@ -15,6 +15,7 @@ namespace KontorNord
             string Brugernavn = "";
             string Password = "";
             bool BrugerRegistret = false;
+            bool SeIntro = false;
 
 
 
@@ -22,10 +23,13 @@ namespace KontorNord
 
             while (ProgramStart == true)
             {
-                INTRO();
+                INTRO(ref SeIntro);
                 
-                LOGINMENU(ref login, ref Brugerinput, ref Brugernavn, ref Password, ref BrugerRegistret);
-               
+                while(SeIntro == true)
+                {
+                  LOGINMENU(ref login, ref Brugerinput, ref Brugernavn, ref Password, ref BrugerRegistret, ref SeIntro);
+                }
+
                 while (login == true)
                 {            
                     Hovedmenu(ref login, ref Brugerinput, ref LogudSvar);
@@ -35,8 +39,9 @@ namespace KontorNord
         }
 
         // Alle metoder til programmet
-        static void INTRO()
+        static void INTRO(ref bool SeIntro)
         {
+            SeIntro = true;
             Console.WriteLine("===============================================".PadLeft(50));
             Console.WriteLine("                BOOK ET MØDELOKALE             ".PadLeft(50));
             Console.WriteLine("===============================================".PadLeft(50));
@@ -49,7 +54,7 @@ namespace KontorNord
             Console.Clear();
         }
 
-        static void LOGINMENU(ref bool login, ref string Brugerinput, ref string Brugernavn, ref string Password, ref bool BrugerRegistret)
+        static void LOGINMENU(ref bool login, ref string Brugerinput, ref string Brugernavn, ref string Password, ref bool BrugerRegistret, ref bool SeIntro)
         {
             Console.Clear();
             Console.WriteLine("===============================================".PadLeft(50));
@@ -57,9 +62,8 @@ namespace KontorNord
             Console.WriteLine("===============================================".PadLeft(50));
             Console.WriteLine("1)  Fortsæt til login".PadLeft(37));
             Console.WriteLine("2)  Opret bruger".PadLeft(32));
+            Console.WriteLine("3)  Gå tilbage til intro".PadLeft(40));
             Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine(" tryk ENTER for at vende tilbage til start...".PadLeft(48));
             Console.WriteLine("");
            
             Brugerinput = Console.ReadLine().ToLower();
@@ -74,10 +78,14 @@ namespace KontorNord
                 case "2":
                     Console.Clear();
                     Register(ref Brugernavn, ref Password, ref BrugerRegistret);
-
+                    break;
+                
+                case "3":
+                    Console.Clear();
+                    SeIntro = false;
                     break;
 
-                   
+
             }
             Console.Clear();
         }
@@ -94,6 +102,10 @@ namespace KontorNord
 
         static void Register(ref string Brugernavn, ref string Password, ref bool BrugerRegistret)
         {
+            Console.WriteLine("===============================================".PadLeft(50));
+            Console.WriteLine("               REGISTER BRUGER                 ".PadLeft(50));
+            Console.WriteLine("===============================================".PadLeft(50));
+
             Console.Write("Indtast Dit brugernavn: ");
             Brugernavn = Console.ReadLine().ToLower();
 
