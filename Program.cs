@@ -34,7 +34,7 @@ namespace KontorNord
                 }
             }   
         }
-
+        
         // Alle metoder til programmet
         static void INTRO(ref bool SeIntro)
         {
