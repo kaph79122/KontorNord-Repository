@@ -4,7 +4,13 @@ using System;
 namespace KontorNord
 {
     internal class Program
+
+
     {
+        static string booketLokale = "";
+        static string booketDag = "";
+        static string booketTid = "";
+
         static void Main(string[] args)
         {
             // Datatyper
@@ -171,9 +177,132 @@ namespace KontorNord
 
 
 
-     // Skriv dit lokale booking her, Rafael
-        static void LokaleBook()    
+        // Skriv dit lokale booking her, Rafael
+        static void LokaleBook()
         {
+            Console.WriteLine("===============================================".PadLeft(50));
+            Console.WriteLine("                 BOOK LOKALE                   ".PadLeft(50));
+            Console.WriteLine("===============================================".PadLeft(50));
+
+            // Lokale fremviser
+
+            Console.WriteLine("Vælg et lokale:");
+            Console.WriteLine("1) Lokale A");
+            Console.WriteLine("2) Lokale B");
+            Console.WriteLine("3) Lokale C");
+
+            string valg = Console.ReadLine();
+            string lokale = "";
+
+            if (valg == "1")
+                lokale = "A";
+            else if (valg == "2")
+                lokale = "B";
+            else if (valg == "3")
+                lokale = "C";
+            else
+            {
+                Console.WriteLine("Ugyldigt valg, prøv igen.");
+                Console.ReadKey();
+                return;
+            }
+            //Vælger dag for booking
+            Console.Clear();
+            Console.WriteLine("Vælg dag:");
+            Console.WriteLine("1) Mandag");
+            Console.WriteLine("2) Tirsdag");
+            Console.WriteLine("3) Onsdag");
+            Console.WriteLine("4) Torsdag");
+            Console.WriteLine("5) Fredag");
+
+            string ValgDag = Console.ReadLine();
+            string dag;
+            switch (ValgDag)
+            {
+                case "1":
+                    dag = "Mandag";
+                    break;
+
+                case "2":
+                    dag = "Tirsdag";
+                    break;
+
+                case "3":
+                    dag = "Onsdag";
+                    break;
+
+                case "4":
+                    dag = "Torsdag";
+                    break;
+
+                case "5":
+                    dag = "Fredag";
+                    break;
+
+                default:
+                    Console.WriteLine("Ugyldigt valg, prøv igen.");
+                    Console.ReadKey();
+                    return;
+            }
+            //Vælger Tidspunkt for booking
+
+            Console.Clear();
+            Console.WriteLine("Vælg Tidspunkt:");
+            Console.WriteLine("1) Morgen");
+            Console.WriteLine("2) Middag");
+            Console.WriteLine("3) Eftermiddag");
+
+            string valgTid = Console.ReadLine();
+            string tid = "";
+
+            switch (valgTid)
+            {
+                case "1":
+                    tid = "Morgen";
+                    break;
+
+                case "2":
+                    tid = "Middag";
+                    break;
+                case "3":
+                    tid = "Eftermiddag";
+                    break;
+                default:
+                    Console.WriteLine("Ugyldigt valg, prøv igen");
+                    Console.ReadKey();
+                    return;
+            }
+
+            //Booking bekræftigelse
+
+            Console.Clear();
+            Console.WriteLine("Bekræft din bookiing:");
+            Console.WriteLine("Lokale: " + lokale);
+            Console.WriteLine("Dag: " + dag);
+            Console.WriteLine("Tidspunkt: " + tid);
+
+            Console.WriteLine("\n1) Bekræft");
+            Console.WriteLine("2) Annuller");
+
+            string svar = Console.ReadLine();
+
+            if (svar == "1")
+            {
+                booketLokale = lokale;
+                booketDag = dag;
+                booketTid = tid;
+
+                Console.WriteLine("Lokalet er nu booket");
+            }
+            else
+            {
+                Console.WriteLine("Din booking er annulleret.");
+            }
+            Console.WriteLine("Tryk på en vilkårlig tast for at vende tilbage.");
+            Console.ReadKey();
+
+               
+
 
 
         }
