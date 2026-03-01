@@ -17,8 +17,6 @@ namespace KontorNord
             bool BrugerRegistret = false;
             bool SeIntro = false;
 
-
-
             /// Selve programmet
 
             while (ProgramStart == true)
@@ -34,7 +32,6 @@ namespace KontorNord
                 {            
                     Hovedmenu(ref login, ref Brugerinput, ref LogudSvar);
                 }
-             
             }   
         }
 
@@ -114,9 +111,6 @@ namespace KontorNord
 
             BrugerRegistret = true;
         }
-
-
-
 
 
         static void Hovedmenu(ref bool login, ref string Brugerinput, ref string LogudSvar)
