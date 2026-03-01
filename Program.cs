@@ -5,8 +5,12 @@ namespace KontorNord
 {
     internal class Program
     {
+
         static void Main(string[] args)
         {
+
+
+
             // Datatyper
             bool ProgramStart = true;
             string Brugerinput = "";
@@ -151,11 +155,11 @@ namespace KontorNord
         }
 
 
-           
 
-     // Skriv dit lokale status her, marie
-            
-        static void LokaleStatus()    
+
+        // Skriv dit lokale status her, marie
+
+        static void LokaleStatus()
         {
 
             string[] tider = { "Morgen", "Formiddag", "Eftermiddag" };
@@ -166,7 +170,7 @@ namespace KontorNord
 
             for (int i = 0; i < 3; i++)
             {
-                
+
                 Console.Write(tider[i].PadRight(18));
 
                 string statusA;
@@ -208,7 +212,7 @@ namespace KontorNord
 
             }
 
-
+        }
         // Skriv dit lokale info her, Katrine
 
         static void LokaleInfo()    
@@ -222,6 +226,8 @@ namespace KontorNord
      // Skriv dit lokale booking her, Rafael
         static void LokaleBook()    
         {
+            string[] tider = { "Morgen", "Formiddag", "Eftermiddag"};
+
 
 
 
