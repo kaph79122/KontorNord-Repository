@@ -4,23 +4,23 @@
     {
         static void Main(string[] args)
         {
-            string brugernavn;
-            int kode;
+            string Brugernavn;
+            int Password;
 
             do
             {
                 Console.Write("Indtast brugernavn: ");
-                brugernavn = Console.ReadLine().ToLower();
+                Brugernavn = Console.ReadLine().ToLower();
 
                 Console.Write("Indtast kode: ");
-                kode = int.Parse(Console.ReadLine());
+                Password = int.Parse(Console.ReadLine());
 
-                if (brugernavn != "louise" || kode != 1234)
+                if (Brugernavn != "louise" || Password != 1234)
                 {
                     Console.WriteLine("Forkert login, prøv igen");
                 }
 
-            } while (brugernavn != "louise" || kode != 1234);
+            } while (Brugernavn != "louise" || Password != 1234);
 
             Console.WriteLine("Adgang godkendt!");
         }
