@@ -70,16 +70,19 @@ namespace KontorNord
                 case "1":
                     Console.Clear();
                     Login(ref login);
+                    SeIntro = false;
                     break;
 
                 case "2":
                     Console.Clear();
                     Register(ref Brugernavn, ref Password, ref BrugerRegistret);
+                    SeIntro = false;
                     break;
                 
                 case "3":
                     Console.Clear();
                     SeIntro = false;
+                    login = false;
                     break;
 
 
@@ -147,6 +150,7 @@ namespace KontorNord
                     Logud(ref LogudSvar, ref login);
                     break;
             }
+            
         }
 
 
