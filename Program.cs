@@ -1,10 +1,14 @@
 ﻿using Microsoft.Win32;
 using System;
+using System.Security.Cryptography;
 
 namespace KontorNord
 {
     internal class Program
     {
+        static string booketLokale = "";
+        static string booketDag = "";
+        static string booketTid = "";
 
         static void Main(string[] args)
         {
@@ -163,13 +167,16 @@ namespace KontorNord
         {
 
             string[] tider = { "Morgen", "Formiddag", "Eftermiddag" };
+            string[] dage = { "Mandag", "Tirsdag", "Onsdag", "Torsdag", "Fredag" };
 
-            Console.WriteLine("========================================================".PadLeft(50));
-            Console.WriteLine("     Lokale A     |     Lokale B     |     Lokale C     |".PadLeft(50));
-            Console.WriteLine("========================================================".PadLeft(50));
 
-            for (int i = 0; i < 3; i++)
+            for (int dag = 0; dag < 5; dag++)
             {
+
+                Console.WriteLine($"=== {dage[dag]}");
+                Console.WriteLine("========================================================".PadLeft(50));
+                Console.WriteLine("     Lokale A     |     Lokale B     |     Lokale C     |".PadLeft(50));
+                Console.WriteLine("========================================================".PadLeft(50));
 
                 Console.Write(tider[i].PadRight(18));
 
