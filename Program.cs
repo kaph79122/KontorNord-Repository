@@ -10,6 +10,14 @@ namespace KontorNord
         static string booketDag = "";
         static string booketTid = "";
 
+        
+
+
+		//2D arrays til skema i LokaleStatus
+		static bool[,] lokaleA = new bool[5, 3]; 
+        static bool[,] lokaleB = new bool[5, 3];
+        static bool[,] lokaleC = new bool[5, 3];
+
         static void Main(string[] args)
         {
 
@@ -166,63 +174,66 @@ namespace KontorNord
         static void LokaleStatus()
         {
 
-            string[] tider = { "Morgen", "Formiddag", "Eftermiddag" };
+            string[] tider = { "Morgen", "Middag", "Eftermiddag" };
             string[] dage = { "Mandag", "Tirsdag", "Onsdag", "Torsdag", "Fredag" };
 
 
             for (int dag = 0; dag < 5; dag++)
             {
 
-                Console.WriteLine($"=== {dage[dag]}");
-                Console.WriteLine("========================================================".PadLeft(50));
-                Console.WriteLine("     Lokale A     |     Lokale B     |     Lokale C     |".PadLeft(50));
-                Console.WriteLine("========================================================".PadLeft(50));
 
-                Console.Write(tider[i].PadRight(18));
+                Console.WriteLine($"=== {dage[dag]} ===");
+                Console.WriteLine("========================================================================".PadLeft(50));
+                Console.WriteLine("             |      Lokale A     |     Lokale B     |     Lokale C     |".PadLeft(50));
+                Console.WriteLine("========================================================================".PadLeft(50));
 
-                string statusA;
-                if (lokaleA[i])
-                {
-                    statusA = "reserveret";
-                }
-                else
-                {
-                    statusA = "ledig";
-                }
+				for (int tid = 0; tid < 3; tid++)
+				{
+					string statusA;
+					if (lokaleA[dag, tid])
+					{
+						statusA = "Reserveret";
+					}
+					else
+					{
+						statusA = "Ledig";
+					}
 
-                string statusB;
-                if (lokaleB[i])
-                {
-                    statusB = "reserveret";
-                }
-                else
-                {
-                    statusB = "ledig";
-                }
+					string statusB;
+					if (lokaleB[dag, tid])
+					{
+						statusB = "Reserveret";
+					}
+					else
+					{
+						statusB = "Ledig";
+					}
 
-                string statusC;
-                if (lokaleC[i])
-                {
-                    statusC = "reserveret";
-                }
-                else
-                {
-                    statusC = "ledig";
-                }
+					string statusC;
+					if (lokaleC[dag, tid])
+					{
+						statusC = "Reserveret";
+					}
+					else
+					{
+						statusC = "Ledig";
+					}
 
-                Console.WriteLine("   " + statusA.PadRight(20) + "   " + statusB.PadRight(20) + "   " + statusC);
+					Console.WriteLine(tider[tid].PadRight(19)  +	statusA.PadRight(19)  +	statusB.PadRight(19) +	statusC);
+				}
 
-
-                Console.WriteLine("Tryk på en tast for at gå tilbage...");
-                Console.ReadKey();
+                Console.WriteLine();
 
 
             }
 
-        }
-        // Skriv dit lokale info her, Katrine
+            Console.WriteLine("Tryk på en tast for at gå tilbage til Hovedmenu");
+			Console.ReadKey();
 
-        static void LokaleInfo()    
+		}
+		// Skriv dit lokale info her, Katrine
+
+		static void LokaleInfo()    
         {
             
 
@@ -245,6 +256,7 @@ namespace KontorNord
             Console.WriteLine("3) Lokale C");
 
             string valg = Console.ReadLine();
+            int lokaleParse = int.Parse(valg) - 1;
             string lokale = "";
 
             if (valg == "1")
@@ -269,7 +281,10 @@ namespace KontorNord
             Console.WriteLine("5) Fredag");
 
             string ValgDag = Console.ReadLine();
+            int dagParse = int.Parse(ValgDag) - 1; //string til int
             string dag;
+
+
             switch (ValgDag)
             {
                 case "1":
@@ -296,6 +311,8 @@ namespace KontorNord
                     Console.WriteLine("Ugyldigt valg, prøv igen.");
                     Console.ReadKey();
                     return;
+
+
             }
             //Vælger Tidspunkt for booking
 
@@ -306,6 +323,7 @@ namespace KontorNord
             Console.WriteLine("3) Eftermiddag");
 
             string valgTid = Console.ReadLine();
+            int valgTidParse = int.Parse(valgTid) - 1;
             string tid = "";
 
             switch (valgTid)
@@ -341,25 +359,28 @@ namespace KontorNord
 
             if (svar == "1")
             {
-                booketLokale = lokale;
-                booketDag = dag;
-                booketTid = tid;
+                // Sender det til bools i toppen så lokaleStatus() kan lave skema
+                if (lokale == "A")
+                    lokaleA[dagParse, valgTidParse] = true;
+                else if (lokale == "B")
+                    lokaleB[dagParse, valgTidParse] = true;
+                else if (lokale == "C")
+                    lokaleC[dagParse, valgTidParse] = true;
 
                 Console.WriteLine("Lokalet er nu booket");
             }
+
             else
             {
                 Console.WriteLine("Din booking er annulleret.");
             }
+
+
             Console.WriteLine("Tryk på en vilkårlig tast for at vende tilbage.");
             Console.ReadKey();
 
 
-
-
-
         }
-
 
 
         static void Logud(ref string LogudSvar, ref bool login)
